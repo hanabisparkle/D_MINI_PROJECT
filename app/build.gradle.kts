@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.devtools.ksp")
+    id("com.google.devtools.ksp") // moshi
 }
 
 android {
@@ -37,11 +37,11 @@ android {
 }
 
 dependencies {
-    implementation("com.github.bumptech.glide:glide:4.14.2")
-    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
-    implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    // dependency yang diperlukan
+    implementation("com.github.bumptech.glide:glide:4.14.2") // glide
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2") // moshi
+    implementation("com.squareup.retrofit2:converter-moshi:3.0.0") // moshi
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") // retrofit
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

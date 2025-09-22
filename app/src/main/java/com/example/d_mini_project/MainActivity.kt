@@ -15,7 +15,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
 import kotlin.collections.firstOrNull
 
 class MainActivity : AppCompatActivity() {
@@ -59,11 +58,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getCardsDataResponse() {
-        Log.d(MAIN_ACTIVITY, "GETCATIMAGERESPONSE1")
         val call = apiService.getCardsData()
 
         call.enqueue(
             object: Callback<CardsData> {
+
                 override fun onFailure(call: Call<CardsData>, t: Throwable) {
                     Log.e(MAIN_ACTIVITY, "Failed to get response", t)
                 }

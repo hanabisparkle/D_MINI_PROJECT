@@ -7,26 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- ImageView positioned at the bottom, but its top cannot go above a certain point -->
+    <!-- Label at the top of the screen -->
     <ImageView
         android:id="@+id/image_result"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="300dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="184dp"
         android:contentDescription="Tarot card image"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tarot_meaning_value"
-        app:layout_constraintHeight_default="wrap"
-        app:layout_constraintHeight_max="300dp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-
-    <!-- Top Label -->
     <TextView
         android:id="@+id/tarot_name_label"
         android:layout_width="wrap_content"
@@ -42,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Card Name (will not be covered) -->
+
     <TextView
         android:id="@+id/tarot_name_value"
         android:layout_width="0dp"
@@ -55,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tarot_name_label"
-         />
+        />
 
 
     <TextView
@@ -66,14 +61,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:gravity="top|start"
+        android:gravity="center_horizontal"
         android:scrollbars="vertical"
-        android:fadeScrollbars="false"
         android:textAppearance="?attr/textAppearanceBody1"
         app:layout_constraintBottom_toTopOf="@+id/image_result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tarot_name_value"
-     />
+        app:layout_constraintVertical_bias="0.0"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
