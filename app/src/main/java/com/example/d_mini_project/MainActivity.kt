@@ -30,13 +30,18 @@ class MainActivity : AppCompatActivity() {
         retrofit.create(ApiService::class.java)
     }
 
-    private val apiResponseView: TextView by lazy{
+    private val nameView: TextView by lazy{
         findViewById(R.id.tarot_name_value)
     }
 
-//    private val imageResultView: ImageView by lazy {
-//        findViewById(R.id.image_result)
-//    }
+    private val meaningView: TextView by lazy{
+        findViewById(R.id.tarot_meaning_value)
+    }
+
+    private val imageResultView: ImageView by lazy {
+        findViewById(R.id.image_result)
+    }
+
     private val imageLoader: ImageLoader by lazy {
         GlideLoader(this)
     }
@@ -66,9 +71,12 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<CardsData>, response: Response<CardsData>) {
                     if (response.isSuccessful){
                         val data: CardsData? = response.body()
-
                         if (data != null) {
-                            apiResponseView.text = data.name
+                            meaningView.text = data.meaning
+                            nameView.text = data.name
+                            if (data.image.isNotEmpty()) {
+                                imageLoader.loadImage(data.image, imageResultView)
+                            }
                         } else {
                             Log.w(MAIN_ACTIVITY, "Response successful but body was null.")
                         }
