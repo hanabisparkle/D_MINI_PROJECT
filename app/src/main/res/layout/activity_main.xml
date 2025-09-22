@@ -41,7 +41,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center_horizontal"
         android:textAppearance="?attr/textAppearanceBody1"
         app:layout_constraintTop_toBottomOf="@id/tarot_name_value"
@@ -54,28 +54,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Draw New Card"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintTop_toBottomOf="@id/tarot_meaning_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Image kartu - DIUBAH: sekarang di tengah tanpa menabrak tombol -->
+    <!-- Image kartu - DIUBAH: gambar memenuhi ruang dengan celah yang pas -->
     <ImageView
         android:id="@+id/image_result"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:scaleType="centerInside"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:contentDescription="Tarot card image"
         app:layout_constraintTop_toBottomOf="@id/button_draw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.7"
-        app:layout_constraintHeight_percent="0.5"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
