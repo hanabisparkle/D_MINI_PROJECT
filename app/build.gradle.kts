@@ -39,7 +39,9 @@ android {
 dependencies {
     // dependency yang diperlukan
     implementation("com.github.bumptech.glide:glide:4.14.2") // glide
+
     ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2") // moshi
+
     implementation("com.squareup.retrofit2:converter-moshi:3.0.0") // moshi
     implementation("com.squareup.retrofit2:retrofit:2.9.0") // retrofit
     implementation(libs.androidx.core.ktx)
